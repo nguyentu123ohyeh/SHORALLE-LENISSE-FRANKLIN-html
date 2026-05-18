@@ -46,10 +46,10 @@ export const products: Product[] = [
     badge: 'Best Seller',
     shortDescription: 'Compact HD projector perfect for home entertainment, presentations, and outdoor movie nights.',
     images: [
-      '/src/products/1.1.png',
-      '/src/products/1.2.png',
-      '/src/products/1.3.png',
-      '/src/products/1.4.png',
+      '/products/1.1.png',
+      '/products/1.2.png',
+      '/products/1.3.png',
+      '/products/1.4.png',
     ],
     specs: {
       ports: ['HDMI', 'USB', 'AV', 'TF Card'],
@@ -85,10 +85,10 @@ export const products: Product[] = [
     badge: 'New',
     shortDescription: 'Magnetic wireless power bank with 10000mAh capacity for fast charging on the go.',
     images: [
-      '/src/products/2.1.jpg',
-      '/src/products/2.2.jpg',
-      '/src/products/2.3.jpg',
-      '/src/products/2.4.jpg',
+      '/products/2.1.jpg',
+      '/products/2.2.jpg',
+      '/products/2.3.jpg',
+      '/products/2.4.jpg',
     ],
     specs: {
       ports: ['1x USB-C PD', '1x USB-A QC 3.0'],
@@ -124,10 +124,10 @@ export const products: Product[] = [
     badge: 'Best Seller',
     shortDescription: 'Smart door lock with fingerprint, WiFi, and app control for keyless entry.',
     images: [
-      '/src/products/3.1.jpg',
-      '/src/products/3.2.jpg',
-      '/src/products/3.3.jpg',
-      '/src/products/3.4.jpg',
+      '/products/3.1.jpg',
+      '/products/3.2.jpg',
+      '/products/3.3.jpg',
+      '/products/3.4.jpg',
     ],
     specs: {
       ports: [],
@@ -163,10 +163,10 @@ export const products: Product[] = [
     badge: 'New',
     shortDescription: 'Digital wrist blood pressure monitor with large LCD display and memory function.',
     images: [
-      '/src/products/4.1.png',
-      '/src/products/4.2.jpg',
-      '/src/products/4.3.jpg',
-      '/src/products/4.4.png',
+      '/products/4.1.png',
+      '/products/4.2.jpg',
+      '/products/4.3.jpg',
+      '/products/4.4.png',
     ],
     specs: {
       ports: [],
@@ -202,10 +202,10 @@ export const products: Product[] = [
     badge: 'New',
     shortDescription: 'Air purifier with bladeless fan design, HEPA filter, and touch controls.',
     images: [
-      '/src/products/5.1.jpg',
-      '/src/products/5.2.jpg',
-      '/src/products/5.3.jpg',
-      '/src/products/5.4.jpg',
+      '/products/5.1.jpg',
+      '/products/5.2.jpg',
+      '/products/5.3.jpg',
+      '/products/5.4.jpg',
     ],
     specs: {
       ports: ['DC Power Input'],
@@ -240,10 +240,10 @@ export const products: Product[] = [
     badge: 'Best Seller',
     shortDescription: 'Bluetooth speaker with wireless charging pad and alarm clock functionality.',
     images: [
-      '/src/products/6.1.jpg',
-      '/src/products/6.2.png',
-      '/src/products/6.3.png',
-      '/src/products/6.4.png',
+      '/products/6.1.jpg',
+      '/products/6.2.png',
+      '/products/6.3.png',
+      '/products/6.4.png',
     ],
     specs: {
       ports: ['USB-C', '3.5mm Audio'],
@@ -278,10 +278,10 @@ export const products: Product[] = [
     badge: 'New',
     shortDescription: 'Mini GPS tracker with USB charging and real-time location tracking.',
     images: [
-      '/src/products/7.1.jpg',
-      '/src/products/7.2.png',
-      '/src/products/7.3.png',
-      '/src/products/7.4.png',
+      '/products/7.1.jpg',
+      '/products/7.2.png',
+      '/products/7.3.png',
+      '/products/7.4.png',
     ],
     specs: {
       ports: ['USB-C'],
@@ -316,10 +316,10 @@ export const products: Product[] = [
     badge: 'Best Seller',
     shortDescription: 'Bluetooth FM transmitter with dual USB ports for hands-free calling and music.',
     images: [
-      '/src/products/8.1.jpg',
-      '/src/products/8.2.jpg',
-      '/src/products/8.3.jpg',
-      '/src/products/8.4.jpg',
+      '/products/8.1.jpg',
+      '/products/8.2.jpg',
+      '/products/8.3.jpg',
+      '/products/8.4.jpg',
     ],
     specs: {
       ports: ['2x USB-A', '3.5mm Audio'],
@@ -354,10 +354,10 @@ export const products: Product[] = [
     badge: 'Best Seller',
     shortDescription: 'Car charger with LED display and Bluetooth connectivity for music and calls.',
     images: [
-      '/src/products/9.1.png',
-      '/src/products/9.2.jpg',
-      '/src/products/9.3.png',
-      '/src/products/9.4.jpg',
+      '/products/9.1.png',
+      '/products/9.2.jpg',
+      '/products/9.3.png',
+      '/products/9.4.jpg',
     ],
     specs: {
       ports: ['2x USB-A', '1x USB-C PD'],
@@ -392,10 +392,10 @@ export const products: Product[] = [
     badge: 'New',
     shortDescription: 'Expand your car cigarette lighter into multiple outlets and USB ports.',
     images: [
-      '/src/products/10.1.jpg',
-      '/src/products/10.2.jpg',
-      '/src/products/10.3.jpg',
-      '/src/products/10.4.jpg',
+      '/products/10.1.jpg',
+      '/products/10.2.jpg',
+      '/products/10.3.jpg',
+      '/products/10.4.jpg',
     ],
     specs: {
       ports: ['3x AC Outlets', '2x USB-A', '1x USB-C PD'],
@@ -430,10 +430,10 @@ export const products: Product[] = [
     badge: 'Best Seller',
     shortDescription: 'Wireless FM transmitter with music player and hands-free calling.',
     images: [
-      '/src/products/11.1.jpg',
-      '/src/products/11.2.png',
-      '/src/products/11.3.png',
-      '/src/products/11.4.png',
+      '/products/11.1.jpg',
+      '/products/11.2.png',
+      '/products/11.3.png',
+      '/products/11.4.png',
     ],
     specs: {
       ports: ['USB-A (2)', 'TF Card', 'USB Flash Drive'],
@@ -468,10 +468,10 @@ export const products: Product[] = [
     badge: 'Best Seller',
     shortDescription: 'Desktop charging station with 6 ports and 200W total power output.',
     images: [
-      '/src/products/12.1.png',
-      '/src/products/12.2.png',
-      '/src/products/12.3.png',
-      '/src/products/12.4.jpg',
+      '/products/12.1.png',
+      '/products/12.2.png',
+      '/products/12.3.png',
+      '/products/12.4.jpg',
     ],
     specs: {
       ports: ['4x USB-A', '2x USB-C PD'],
@@ -506,10 +506,10 @@ export const products: Product[] = [
     badge: 'New',
     shortDescription: 'Foldable wireless charging stand with magnetic alignment for iPhone.',
     images: [
-      '/src/products/13.1.png',
-      '/src/products/13.2.jpg',
-      '/src/products/13.3.jpg',
-      '/src/products/13.4.jpg',
+      '/products/13.1.png',
+      '/products/13.2.jpg',
+      '/products/13.3.jpg',
+      '/products/13.4.jpg',
     ],
     specs: {
       ports: ['USB-C'],
@@ -545,10 +545,10 @@ export const products: Product[] = [
     badge: 'Best Seller',
     shortDescription: 'LED mood lamp with built-in Bluetooth speaker for ambient lighting and music.',
     images: [
-      '/src/products/14.1.jpg',
-      '/src/products/14.2.jpg',
-      '/src/products/14.3.jpg',
-      '/src/products/14.4.jpg',
+      '/products/14.1.jpg',
+      '/products/14.2.jpg',
+      '/products/14.3.jpg',
+      '/products/14.4.jpg',
     ],
     specs: {
       ports: ['USB-C'],
@@ -584,10 +584,10 @@ export const products: Product[] = [
     badge: 'Best Seller',
     shortDescription: 'Ergonomic wireless mouse with silent click and rechargeable battery.',
     images: [
-      '/src/products/15.1.jpg',
-      '/src/products/15.2.jpeg',
-      '/src/products/15.3.jpeg',
-      '/src/products/15.4.jpeg',
+      '/products/15.1.jpg',
+      '/products/15.2.jpeg',
+      '/products/15.3.jpeg',
+      '/products/15.4.jpeg',
     ],
     specs: {
       ports: ['USB-C'],
@@ -623,10 +623,10 @@ export const products: Product[] = [
     badge: 'Best Seller',
     shortDescription: 'Educational tablet robot for kids with interactive learning apps and games.',
     images: [
-      '/src/products/17.1.jpg',
-      '/src/products/17.2.jpg',
-      '/src/products/17.3.jpg',
-      '/src/products/17.4.jpg',
+      '/products/17.1.jpg',
+      '/products/17.2.jpg',
+      '/products/17.3.jpg',
+      '/products/17.4.jpg',
     ],
     specs: {
       ports: ['USB-C', '3.5mm Audio', 'TF Card'],
@@ -662,10 +662,10 @@ export const products: Product[] = [
     badge: 'New',
     shortDescription: 'Portable 10-inch touchscreen display with built-in stand for extended screen setup.',
     images: [
-      '/src/products/16.1.jpg',
-      '/src/products/16.2.jpg',
-      '/src/products/16.3.jpg',
-      '/src/products/16.4.jpg',
+      '/products/16.1.jpg',
+      '/products/16.2.jpg',
+      '/products/16.3.jpg',
+      '/products/16.4.jpg',
     ],
     specs: {
       ports: ['USB-C', 'Mini HDMI'],
@@ -701,10 +701,10 @@ export const products: Product[] = [
     badge: 'Best Seller',
     shortDescription: 'Smart digital scale with body composition analysis for weight, BMI, muscle mass, and more.',
     images: [
-      '/src/products/18.1.png',
-      '/src/products/18.2.jpg',
-      '/src/products/18.3.jpg',
-      '/src/products/18.4.jpg',
+      '/products/18.1.png',
+      '/products/18.2.jpg',
+      '/products/18.3.jpg',
+      '/products/18.4.jpg',
     ],
     specs: {
       ports: [],
