@@ -46,6 +46,22 @@ interface SupportTopic {
   inquiryValue: string;
 }
 
+interface ContactCartInquiryItem {
+  id: string;
+  name: string;
+  slug: string;
+  quantity: number;
+  price: number;
+  image: string;
+  productUrl: string;
+}
+
+interface ContactCartInquiry {
+  items: ContactCartInquiryItem[];
+  message: string;
+  cartSummary: string;
+}
+
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
@@ -485,6 +501,7 @@ function ContactFormWithTopicListener() {
   const [form, setForm] = useState<FormData>(INITIAL_FORM);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [contactCartItems, setContactCartItems] = useState<ContactCartInquiryItem[]>([]);
   const { items, subtotal } = useCart();
   const subjectRef = useRef<HTMLInputElement>(null);
 
@@ -507,6 +524,30 @@ function ContactFormWithTopicListener() {
       setForm((prev) => ({ ...prev, cartSummary: summary }));
     }
   }, [items, form.isOrderInquiry]);
+
+  useEffect(() => {
+    const savedInquiry = sessionStorage.getItem('contactCartInquiry');
+    if (!savedInquiry) return;
+
+    try {
+      const data = JSON.parse(savedInquiry) as ContactCartInquiry;
+
+      setContactCartItems(data.items ?? []);
+
+      setForm((prev) => ({
+        ...prev,
+        subject: prev.subject || 'Product inquiry from cart',
+        inquiry: prev.inquiry || 'Bulk order',
+        isOrderInquiry: true,
+        cartSummary: data.cartSummary || prev.cartSummary,
+        message: data.message || prev.message,
+      }));
+
+      sessionStorage.removeItem('contactCartInquiry');
+    } catch (error) {
+      console.error('Failed to load cart inquiry:', error);
+    }
+  }, []);
 
   const validate = useCallback((): FormErrors => {
     const errs: FormErrors = {};
@@ -689,13 +730,24 @@ function ContactFormWithTopicListener() {
                 {items.map((item) => (
                   <div
                     key={item.product.id}
-                    className="flex items-center justify-between text-sm"
+                    className="flex items-center justify-between gap-3 text-sm"
                   >
-                    <span className="text-alloy-200">
-                      {item.product.name}
-                      <span className="ml-1 text-alloy-500">x{item.quantity}</span>
-                    </span>
-                    <span className="text-alloy-400">
+                    <div className="flex min-w-0 items-center gap-3">
+                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg border border-graphene-700 bg-graphene-900">
+                        <img
+                          src={item.product.images[0]}
+                          alt={item.product.name}
+                          className="h-full w-full object-contain p-1.5"
+                        />
+                      </div>
+
+                      <span className="min-w-0 text-alloy-200">
+                        <span className="line-clamp-1">{item.product.name}</span>
+                        <span className="text-alloy-500">x{item.quantity}</span>
+                      </span>
+                    </div>
+
+                    <span className="flex-shrink-0 text-alloy-400">
                       ${(item.product.price * item.quantity).toFixed(2)}
                     </span>
                   </div>

@@ -8,6 +8,55 @@ export default function CartDrawer() {
   const { items, isOpen, closeCart, subtotal } = useCart();
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
+    const handleContactUs = () => {
+      const inquiryItems = items.map((item) => {
+        const imagePath = item.product.images?.[0] ?? '';
+        const imageUrl = imagePath.startsWith('http')
+          ? imagePath
+          : `${window.location.origin}${imagePath}`;
+
+        return {
+          id: item.product.id,
+          name: item.product.name,
+          slug: item.product.slug,
+          quantity: item.quantity,
+          price: item.product.price,
+          image: imageUrl,
+          productUrl: `${window.location.origin}/products/${item.product.slug}`,
+        };
+      });
+
+      const message = [
+        'Hello, I would like to ask about the following products:',
+        '',
+        ...inquiryItems.map(
+          (item, index) =>
+            `${index + 1}. ${item.name}
+          Quantity: ${item.quantity}
+          Unit price: $${item.price.toFixed(2)}
+          Product image: ${item.image}
+          Product page: ${item.productUrl}`,
+        ),
+        '',
+        `Subtotal: $${subtotal.toFixed(2)}`,
+        '',
+        'Please let me know availability, shipping time, and how to complete this order.',
+      ].join('\n');
+
+      sessionStorage.setItem(
+        'contactCartInquiry',
+        JSON.stringify({
+          items: inquiryItems,
+          message,
+          cartSummary: inquiryItems
+            .map((item) => `${item.name} x${item.quantity}`)
+            .join(', '),
+        }),
+      );
+
+      closeCart();
+    };
+
   return (
     <>
       {/* Backdrop overlay */}
@@ -79,14 +128,14 @@ export default function CartDrawer() {
             </div>
           )}
           <div className="flex flex-col gap-2">
-            <Link to="/checkout-info" onClick={closeCart}>
+            <Link to="/contact" onClick={handleContactUs}>
               <Button
                 variant="primary"
                 size="lg"
                 className="w-full"
                 disabled={items.length === 0}
               >
-                Checkout
+                Contact Us
               </Button>
             </Link>
             <Link

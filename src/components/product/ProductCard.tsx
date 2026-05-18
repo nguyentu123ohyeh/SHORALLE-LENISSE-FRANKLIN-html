@@ -63,14 +63,42 @@ export default function ProductCard({ product }: ProductCardProps) {
           loading="lazy"
         />
 
+        {/* Spec Strip Overlay - only inside image area */}
+        {settings.showSpecStrips && (
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 translate-y-full bg-graphene-950/95 px-4 py-3 backdrop-blur-sm transition-transform duration-300 group-hover:translate-y-0">
+            <div className="flex flex-wrap items-center gap-3 text-[11px] text-alloy-100">
+              {product.specs.ports && product.specs.ports.length > 0 && (
+                <div className="flex items-center gap-1">
+                  <Usb className="h-3 w-3 text-teal-400" />
+                  <span>{product.specs.ports.slice(0, 3).join(', ')}</span>
+                </div>
+              )}
+
+              {product.specs.powerDelivery && (
+                <div className="flex items-center gap-1">
+                  <Zap className="h-3 w-3 text-coral-400" />
+                  <span>{product.specs.powerDelivery}</span>
+                </div>
+              )}
+
+              {product.compatibility.devices && product.compatibility.devices.length > 0 && (
+                <div className="flex items-center gap-1">
+                  <MonitorSmartphone className="h-3 w-3 text-violet-400" />
+                  <span>{product.compatibility.devices.slice(0, 2).join(', ')}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
         {/* Category Badge */}
-        <div className="absolute top-3 left-3">
+        <div className="absolute top-3 left-3 z-30">
           <Badge variant="category">{product.category}</Badge>
         </div>
 
         {/* Product Badge */}
         {product.badge && (
-          <div className="absolute top-3 left-28">
+          <div className="absolute top-3 left-28 z-30">
             <Badge variant={BADGE_VARIANT_MAP[product.badge] ?? 'featured'}>
               {product.badge}
             </Badge>
@@ -161,32 +189,6 @@ export default function ProductCard({ product }: ProductCardProps) {
           Add to Cart
         </Button>
       </div>
-
-      {/* Spec Strip Overlay */}
-      {settings.showSpecStrips && (
-        <div className="spec-strip absolute bottom-0 left-0 right-0 z-20 bg-graphene-950/95 backdrop-blur-sm px-4 py-3">
-          <div className="flex flex-wrap items-center gap-3 text-[11px] text-alloy-100">
-            {product.specs.ports && product.specs.ports.length > 0 && (
-              <div className="flex items-center gap-1">
-                <Usb className="h-3 w-3 text-teal-400" />
-                <span>{product.specs.ports.slice(0, 3).join(', ')}</span>
-              </div>
-            )}
-            {product.specs.powerDelivery && (
-              <div className="flex items-center gap-1">
-                <Zap className="h-3 w-3 text-coral-400" />
-                <span>{product.specs.powerDelivery}</span>
-              </div>
-            )}
-            {product.compatibility.devices && product.compatibility.devices.length > 0 && (
-              <div className="flex items-center gap-1">
-                <MonitorSmartphone className="h-3 w-3 text-violet-400" />
-                <span>{product.compatibility.devices.slice(0, 2).join(', ')}</span>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </div>
   );
 }
